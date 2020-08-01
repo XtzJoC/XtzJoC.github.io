@@ -66,13 +66,14 @@
         <p id="info-field">This is a test info</p>
 
         <div class="button-div">
-            <button type="button" id="generate">Generate password</button>
+            <button type="button" id="generate" onclick="GeneratePassword()">Generate password</button>
         </div>
     </div>
 
     <div class="result">
         <h1 id="result-title">No password generated.</h1>
-        <h1 id="result-text">------------</h1>
+        <input type="text" id="result-input" readonly><br>
+        <button onclick="CopyGeneratedPassword()">Copy your password</button>
     </div>
 
     <script src="app.js" charset="utf-8"></script>

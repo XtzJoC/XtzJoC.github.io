@@ -64,16 +64,16 @@ body{
     padding: 5px;
     font-size: 22px;
     max-width: 5000px;
-    width: 45%;
+    width: 48%;
 }
 
 .settings > div > div{
-    width: 45%;
+    width: 48%;
     text-align: left;
 }
 
 .settings > div > div > input{
-    width: 100% - 50px;
+    width: calc(100% - 40px);
     vertical-align: middle;
     text-align: left;
     display: inline-block;
@@ -121,7 +121,7 @@ body{
     text-align: center;
 }
 
-#generate{
+#generate, .result > button{
     padding: 7px;
     font-size: 32px;
     margin: 8px 0px;
@@ -135,10 +135,21 @@ body{
     text-align: center;
 }
 
-.result > h1{
+.result > h1, .result > input{
     color: #d1d8e0;
     font-size: 48px;
     font-weight: bold;
+}
+
+.result > input{
+    background-color: #778ca3;
+    border: transparent;
+    text-align: center;
+}
+
+.result > button{
+    font-size: 24px;
+    font-weight: 400;
 }
 
 

@@ -1,10 +1,14 @@
-//Constants parameters used in order to generate the custom password
+//Constants values
 const ALPHA_ALW_CHARS = "abcdefghijklmnopqrstuvwxyz";
 const NUM_ALW_CHARS = "0123456789";
 const BASE_SPECIALS_ALW_CHARS = "&()=/*+-_<>,;:!?./$#@";
 const BASE_CHAR_SUBSTITUTION = {
     'o':'0', 'i':'1', 'z':'2', 'e':'3', 'a':'@', 's':'$', 'g':'6', 't':'7', 'b':'8'
 };
+
+const BASE_RESLUT_TEXT = "------------";
+const MAX_PWD_STEPS = 10000;
+const MIN_PARAMETERS_LENGHT = 4;
 
 //Elements form the html page
 const siteInput = document.getElementById("site");
@@ -21,8 +25,7 @@ const customSubstitutesDescription = document.getElementById("substitutes-used")
 
 const infoField = document.getElementById("info-field");
 
-const generateBtn = document.getElementById("generate");
-const resultMsg = document.getElementById("result-text");
+const resultInput = document.getElementById("result-input");
 const resultTitle = document.getElementById("result-title");
 
 
@@ -33,7 +36,7 @@ function Encrypt(site, username, key, customLenght = 12,
     var encryptedData = "";
     var i = 0;
 
-    while(encryptedData.length < customLenght && i < 10000){
+    while(encryptedData.length < customLenght && i < MAX_PWD_STEPS){
         var char1 = site[i % site.length].charCodeAt(0);
         var char2 = username[i % username.length].charCodeAt(0);
         var char3 = key[i % key.length].charCodeAt(0)
@@ -53,6 +56,12 @@ function Encrypt(site, username, key, customLenght = 12,
         i++;
     }
 
+    if(encryptedData.length < customLenght){
+        infoField.innerHTML = "The password can't be generated with these parameters.";
+        return BASE_RESLUT_TEXT;
+    }
+
+    infoField.innerHTML = "";
     return encryptedData;
 }
 
@@ -102,34 +111,6 @@ function StrToDict(str){
 // // Functions linked with the html page
 
 //Function call to generate the custom password
-function GeneratePassword(){
-    var site = siteInput.value;
-    var username = usernameInput.value;
-    var uPwd = universalPasswordInput.value;
-
-    if(site === "" || username === "" || uPwd === ""){
-        infoField.innerHTML = "Please enter all requiered values";
-        return;
-    }
-
-    if(site.length === username.length && site.length === uPwd.length){
-        infoField.innerHTML = "Please enter values of different lenghts";
-        return;
-    }
-
-    var customLenght = parseInt(passwordLenghtInput.value);
-    var customChars = customCharsInput.value;
-    var customSubsitutes = StrToDict(customSubstitutesInput.value);
-
-    console.log(`s:${site},u:${username},p:${uPwd},l:${customLenght},c:${customChars} and sub:${customSubsitutes}`)
-
-    var pwd = Encrypt(site, username, uPwd, customLenght, customChars, customSubsitutes);
-
-    infoField.innerHTML = "";
-    resultTitle.innerHTML = "Your custom password :";
-    resultMsg.innerHTML = `${pwd}`;
-}
-
 function IsNumber(event){
     var key = event.keyCode;
 
@@ -210,6 +191,45 @@ function EnableCustomSubstitutes(){
     }
 }
 
+function GeneratePassword(){
+    var site = siteInput.value;
+    var username = usernameInput.value;
+    var uPwd = universalPasswordInput.value;
+
+    if(site === "" || username === "" || uPwd === ""){
+        infoField.innerHTML = "Please enter all requiered values";
+        return;
+    }
+
+    if(site.length <= MIN_PARAMETERS_LENGHT || username.length <= MIN_PARAMETERS_LENGHT
+      || uPwd.length <= MIN_PARAMETERS_LENGHT){
+        infoField.innerHTML = `Please enter parameters of lenght higher than ${MIN_PARAMETERS_LENGHT}`;
+        return;
+      }
+
+    if(site.length === username.length && site.length === uPwd.length){
+        infoField.innerHTML = "Please enter parameters of different lenghts";
+        return;
+    }
+
+    var customLenght = parseInt(passwordLenghtInput.value);
+    var customChars = customCharsInput.value;
+    var customSubsitutes = StrToDict(customSubstitutesInput.value);
+
+    //console.log(`s:${site},u:${username},p:${uPwd},l:${customLenght},c:${customChars} and sub:${customSubsitutes}`)
+
+    var pwd = Encrypt(site, username, uPwd, customLenght, customChars, customSubsitutes);
+
+    resultTitle.innerHTML = "Your custom password :";
+    resultInput.value = `${pwd}`;
+}
+
+function CopyGeneratedPassword(){
+    if(resultInput.value === BASE_RESLUT_TEXT) return;
+    resultInput.select();
+    document.execCommand("Copy");
+}
+
 function Main(){
     EnableCustomLenght();
     ShowPassword();
@@ -218,7 +238,7 @@ function Main(){
     UpdateSubstitutesDescription();
 
     infoField.innerHTML = "";
-    generateBtn.onclick = GeneratePassword;
+    resultInput.value = BASE_RESLUT_TEXT;
 }
 
 Main();
