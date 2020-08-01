@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+header{
+    background: #d1d8e0;
+    text-align: center;
+    padding: 20px;
+}
+
+header > *{
+    display: inline-block;
+}
+
+header > img{
+    width: 48px;
+    margin: 0px 40px;
+}
+
+header > h1{
+    color: #778ca3;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+body{
+    background-color: #778ca3;
+}
+
+.settings{
+    margin: 10px auto;
+    width: 85%;
+    font-size: 32px;
+    font-weight: 400;
+    border: solid #d1d8e0 5px ;
+    border-radius: 7px;
+}
+
+.settings > div{
+    padding-top: 7px;
+    color: #d1d8e0;
+}
+
+.settings > div > *{
+    display: inline-block;
+}
+
+.settings > div > label{
+    text-align: right;
+    width:  50%;
+}
+
+.settings > div input{
+    height: 32px;
+    background-color: #d1d8e0;
+    border-color: #d1d8e0;
+    border: #778ca3;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 22px;
+    max-width: 5000px;
+    width: 45%;
+}
+
+.settings > div > div{
+    width: 45%;
+    text-align: left;
+}
+
+.settings > div > div > input{
+    width: 100% - 50px;
+    vertical-align: middle;
+    text-align: left;
+    display: inline-block;
+}
+
+.settings > div > div > .num-input{
+    width: 42px;
+    text-align: center;
+}
+
+.settings > div > div > button{
+    vertical-align: middle;
+    background-image: unset;
+    background-size: 29px;
+    height: 32px;
+    width: 32px;
+    color: #d1d8e0;
+    border-color: #d1d8e0;
+    background-color: #d1d8e0;
+}
+
+.sub{
+    font-size: 16px;
+    vertical-align: top;
+    padding-top: 10px;
+    font-weight: 400;
+    color: #324153;
+}
+
+#substitutes-used{
+    width: 49%;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+#info-field{
+    font-size: 24px;
+    font-weight: 700;
+    color: #eb3b5a;
+    text-align: center;
+}
+
+.button-div{
+    text-align: center;
+}
+
+#generate{
+    padding: 7px;
+    font-size: 32px;
+    margin: 8px 0px;
+    background-color: #3867d6;
+    border-color: #778ca3;
+    color: #d1d8e0;
+    font-weight: bold;
+}
+
+.result{
+    text-align: center;
+}
+
+.result > h1{
+    color: #d1d8e0;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

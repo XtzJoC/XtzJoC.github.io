@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Universal Password Generator</title>
+    <link rel="shortcut icon" href="Images/icon.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <header>
+        <img src="Images/icon.png" alt="">
+        <h1><u>Universal Password Generator</u></h1>
+        <img src="Images/icon.png" alt="">
+    </header>
+
+    <div class="settings">
+        <div>
+            <label for="site">Site : </label>
+            <input type="text" id="site" placeholder="ex : google" value = "google" autocomplete="on">
+        </div>
+
+        <div>
+            <label for="username">Username : </label>
+            <input type="text" id="username" placeholder="ex : macronDu01" autocomplete="on">
+        </div>
+
+        <div>
+            <label for="password">Universal password : </label>
+            <div class="multiple-field">
+                <input type="text" id="u-password" autocomplete="on">
+                <button id="show-password" onclick="ShowPassword()"></button>
+            </div>
+        </div>
+
+        <div>
+            <label for="pdwlenght">Password lenght : </label>
+            <div class="multiple-field">
+                <input type="text" class="num-input" id="password-lenght" value="12"
+                       maxlength="2" onkeypress="return IsNumber(event)" autocomplete="on">
+                <button id="custom-lenght" onclick="EnableCustomLenght()"></button>
+            </div>
+        </div>
+
+        <div>
+            <label for="customchars">Custom characters : </label>
+            <div class="multiple-field">
+                <input type="text" id="special-chars" onkeypress="return IsCustomChar(event)" placeholder="ex : %$&*-/"
+                autocomplete="on">
+                <button id="custom-chars" onclick="EnableCustomChars()"></button>
+            </div>
+        </div>
+
+        <div>
+            <label for="customSubstitutes">Custom substitutes : </label>
+            <div class="multiple-field">
+                <input type="text" id="substitutes" placeholder="ex : a:b,s:$" oninput="UpdateSubstitutesDescription()"
+                autocomplete="on">
+                <button id="custom-substitutes" onclick="EnableCustomSubstitutes()"></button>
+            </div>
+
+            <label class="sub">Substitutes useds :  </label>
+            <p class="sub" id="substitutes-used">{}</p>
+        </div>
+
+        <p id="info-field">This is a test info</p>
+
+        <div class="button-div">
+            <button type="button" id="generate">Generate password</button>
+        </div>
+    </div>
+
+    <div class="result">
+        <h1 id="result-title">No password generated.</h1>
+        <h1 id="result-text">------------</h1>
+    </div>
+
+    <script src="app.js" charset="utf-8"></script>
+  </body>
+</html>
