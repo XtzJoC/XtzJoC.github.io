@@ -3,7 +3,7 @@ const ALPHA_ALW_CHARS = "abcdefghijklmnopqrstuvwxyz";
 const NUM_ALW_CHARS = "0123456789";
 const BASE_SPECIALS_ALW_CHARS = "&()=/*+-_<>,;:!?./$#@";
 const BASE_CHAR_SUBSTITUTION = {
-    'o':'0', 'i':'1', 'z':'2', 'e':'3', 'a':'@', 's':'$', 'g':'6', 't':'7', 'b':'8'
+    'o':'0', 'i':'1', 'z':'2', 'e':'3', 'a':'@', 's':'$', 'g':'6', 't':'7', 'b':'8', 'l':'L'
 };
 
 const BASE_RESLUT_TEXT = "------------";
@@ -24,10 +24,11 @@ const customSubstitutesBtn = document.getElementById("custom-substitutes");
 const customSubstitutesDescription = document.getElementById("substitutes-used");
 
 const infoField = document.getElementById("info-field");
+const generateBtn = document.getElementById("generate")
 
 const resultInput = document.getElementById("result-input");
 const resultTitle = document.getElementById("result-title");
-
+const copyPwdBtn = document.getElementById("copy-pwd")
 
 
 //Encryption function
@@ -57,11 +58,11 @@ function Encrypt(site, username, key, customLenght = 12,
     }
 
     if(encryptedData.length < customLenght){
-        infoField.innerHTML = "The password can't be generated with these parameters.";
+        UpdateInfoField("The password can't be generated with these parameters");
         return BASE_RESLUT_TEXT;
     }
 
-    infoField.innerHTML = "";
+    UpdateInfoField(`Password successfully generated with ${i - customLenght} failures`, "#20bf6b");
     return encryptedData;
 }
 
@@ -110,15 +111,29 @@ function StrToDict(str){
 
 // // Functions linked with the html page
 
-//Function call to generate the custom password
-function IsNumber(event){
-    var key = event.keyCode;
+//#region input call back
+function IsBaseInput(charCode){
+    //Backspace, enter, tab and dell
+    if(charCode === 8 || charCode == 9 || charCode == 13 || charCode === 46){
+        return true;
+    }
 
-    if(key > 48 && key < 57){
+    //Arrows : up, down, left and right
+    if(charCode >= 37 && charCode <= 40){
         return true;
     }
 
     return false;
+}
+
+function IsNumber(event){
+    var key = event.keyCode;
+
+    if(key >= 96 && key < 105){
+        return true;
+    }
+
+    return IsBaseInput(key);
 }
 
 function IsAllowedChar(char){
@@ -131,7 +146,7 @@ function IsAllowedChar(char){
 }
 
 function IsCustomChar(event){
-    var keyChar = String.fromCharCode(event.keyCode);
+    var keyChar = event.key;
 
     if(IsAllowedChar(keyChar)){
         return false;
@@ -146,7 +161,9 @@ function UpdateSubstitutesDescription(){
     subsStr = subsStr.replace(/"/g, '');
     customSubstitutesDescription.innerHTML = subsStr;
 }
+//#endregion
 
+//#region Onclick call back
 function ShowPassword(){
     if(universalPasswordInput.type === "password"){
         universalPasswordInput.type = "text";
@@ -192,29 +209,40 @@ function EnableCustomSubstitutes(){
 }
 
 function GeneratePassword(){
+    //Initialize the result text to the failure result
+    resultInput.value = `${BASE_RESLUT_TEXT}`;
+
     var site = siteInput.value;
     var username = usernameInput.value;
     var uPwd = universalPasswordInput.value;
 
+    //Generation disabled when a value is empty
     if(site === "" || username === "" || uPwd === ""){
-        infoField.innerHTML = "Please enter all requiered values";
+        UpdateInfoField("Please enter all requiered values");
         return;
     }
 
+    //Generation disabled when a value is not enough long
     if(site.length <= MIN_PARAMETERS_LENGHT || username.length <= MIN_PARAMETERS_LENGHT
       || uPwd.length <= MIN_PARAMETERS_LENGHT){
-        infoField.innerHTML = `Please enter parameters of lenght higher than ${MIN_PARAMETERS_LENGHT}`;
+        UpdateInfoField(`Please enter parameters of lenght higher than ${MIN_PARAMETERS_LENGHT}`);
         return;
-      }
+    }
 
+    //Generation disabled when each values has the same lenght
     if(site.length === username.length && site.length === uPwd.length){
-        infoField.innerHTML = "Please enter parameters of different lenghts";
+        UpdateInfoField("Please enter parameters of different lenghts");
         return;
     }
 
     var customLenght = parseInt(passwordLenghtInput.value);
     var customChars = customCharsInput.value;
     var customSubsitutes = StrToDict(customSubstitutesInput.value);
+
+    if(!(customLenght > 0)){
+        UpdateInfoField("The password lenght is incorrect");
+        return;
+    }
 
     //console.log(`s:${site},u:${username},p:${uPwd},l:${customLenght},c:${customChars} and sub:${customSubsitutes}`)
 
@@ -229,15 +257,33 @@ function CopyGeneratedPassword(){
     resultInput.select();
     document.execCommand("Copy");
 }
+//#endregion
+
+function UpdateInfoField(msg, color = "#eb3b5a"){
+    infoField.innerHTML = msg;
+    infoField.style.color = color;
+}
 
 function Main(){
-    EnableCustomLenght();
     ShowPassword();
+    EnableCustomLenght();
     EnableCustomChars();
     EnableCustomSubstitutes();
+    
+    showPasswordBtn.addEventListener('click', ShowPassword);
+    customLenghtBtn.addEventListener('click', EnableCustomLenght);
+    customCharsBtn.addEventListener('click', EnableCustomChars);
+    customSubstitutesBtn.addEventListener('click', EnableCustomSubstitutes);
+    generateBtn.addEventListener('click', GeneratePassword);
+    copyPwdBtn.addEventListener('click', CopyGeneratedPassword);
+
+    passwordLenghtInput.onkeydown = IsNumber;
+    customCharsInput.onkeydown = IsCustomChar;
+    customSubstitutesInput.oninput =  UpdateSubstitutesDescription;
+
     UpdateSubstitutesDescription();
 
-    infoField.innerHTML = "";
+    UpdateInfoField("");
     resultInput.value = BASE_RESLUT_TEXT;
 }
 

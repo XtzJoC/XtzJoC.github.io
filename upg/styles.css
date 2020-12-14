@@ -7,6 +7,11 @@
     font-family: Roboto, sans-serif;
 }
 
+body{
+    width: 100%;
+    background-color: #778ca3;
+}
+
 header{
     background: #d1d8e0;
     text-align: center;
@@ -26,10 +31,6 @@ header > h1{
     color: #778ca3;
     font-size: 48px;
     font-weight: bold;
-}
-
-body{
-    background-color: #778ca3;
 }
 
 .settings{
@@ -104,7 +105,7 @@ body{
 }
 
 #substitutes-used{
-    width: 49%;
+    width: 48%;
     word-break: break-all;
     word-wrap: break-word;
     white-space: normal;
@@ -145,6 +146,7 @@ body{
     background-color: #778ca3;
     border: transparent;
     text-align: center;
+    width: 100%;
 }
 
 .result > button{
@@ -152,7 +154,11 @@ body{
     font-weight: 400;
 }
 
-
+@media screen and (max-width: 480px){
+    body{
+        width: 480px;
+    }
+}
 
 
 
