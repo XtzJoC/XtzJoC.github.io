@@ -119,22 +119,18 @@ main{
     flex: 1;
     padding: 10px;
 
-    height: 150px;
-
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0fr 0fr 0.8fr;
-    grid-template-areas: "name" "sub-infos" "overview";
+    display: flex;
+    flex-direction: column;
 }
 
 .article-name{
-    grid-area: name;
+    flex: 0;
     color: var(--main-color);
     font-size: 26px;
 }
 
 .article-sub-infos{
-    grid-area: sub-infos;
+    flex: 0;
 }
 
 .article-sub-infos > span{
@@ -142,9 +138,10 @@ main{
 }
 
 .article-overview{
-    grid-area: overview;
+    flex: 1;
+    text-overflow: ellipsis;
     overflow: hidden;
-    height: max-content;
+    flex-wrap: nowrap;
 }
 
 /*Responsive design*/
