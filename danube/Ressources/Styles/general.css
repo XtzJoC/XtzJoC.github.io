@@ -1,0 +1,159 @@
+/* variables */
+:root{
+    --background-color: #222831;
+    --secondary-color: #30475e;
+    --main-color: #f2a365;
+    --text-color: #ececec;
+
+    --max-width: 600px;
+    --max-ratio: 1/1;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+}
+
+body{
+    background-color: var(--background-color);
+}
+
+/*Global header style*/
+
+header{
+    background-color: var(--main-color);
+
+    display: grid;
+    grid-template-columns: 0fr 1fr 0fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "title search-bar cart";
+}
+
+header > *{
+    margin: 10px;
+    align-self: center;
+}
+
+header > h1{
+    grid-area: title;
+
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.search-bar{
+    grid-area: search-bar;
+    display: flex;
+}
+
+.search-bar > input, .search-bar > button{
+    background-color: white;
+    border: 1px solid black;
+
+    outline: none;
+}
+
+.search-bar > input{
+    flex: 1;
+    width: 100%;
+    height: 28px;
+    border-right: 0px;
+
+    font-size: 20px;
+    padding-left: 2px;
+}
+
+.search-bar > button{
+    width: 30px;
+    height: 30px;
+
+    background-image: url("../../Ressources/Icons/search.png");
+    background-size: 24px;
+    background-position: 2px;
+    background-repeat: no-repeat;
+}
+
+.cart{
+    grid-area: cart;
+}
+
+/*Global footer style*/
+
+footer{
+    display: block;
+    padding: 0px;
+    padding-bottom: 20px;
+
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+}
+
+footer a{
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+.footer-container{
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin: 0px auto;
+    width: 100%;
+}
+
+.footer-panel{
+    margin: 20px 20px;
+    width: 300px;
+}
+
+.footer-panel > h1{
+    color: var(--main-color);
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+.footer-panel > ul{
+    margin-left: 20px;
+}
+
+.footer-end{
+    margin-top: 50px;
+    width: 100%;
+
+    border-top: solid 2px var(--text-color);
+}
+
+.footer-end a{
+    display: block;
+    margin: 10px auto;
+    width: max-content;
+    text-transform: uppercase;
+}
+
+/*Responsive design*/
+
+@media (max-width: 600px), (max-aspect-ratio: 1/1){
+    header{
+        grid-template-columns: 1fr 0fr;
+        grid-template-rows: 0fr 1fr;
+        grid-template-areas: "title title" "search-bar cart";
+    }
+
+    header > h1{
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 0px;
+    }
+}

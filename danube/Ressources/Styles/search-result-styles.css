@@ -1,0 +1,161 @@
+main{
+    display: flex;
+    width: 100%;
+}
+
+/*filter bar*/
+
+.filter-bar{
+    flex: 1 max-content;
+    padding: 10px;
+
+    background-color: var(--background-color);
+    border-right: solid 2px var(--main-color);
+}
+
+.filter-bar > h1{
+    padding-bottom: 10px;
+
+    color: var(--main-color);
+    font-size: 18px;
+}
+
+.filter{
+    padding-bottom: 4px;
+}
+
+.filter label{
+    font-size: 16px;
+}
+
+.price-field > input{
+    width: 50px;
+    color: var(--background-color);
+}
+
+.star-field > label{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.star-field > input[type="radio"]{
+    display: none;
+}
+
+.star-field > input[type="radio"]:checked + label{
+    color: var(--main-color);
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.filters-content > button{
+    display: block;
+    padding: 5px;
+    margin: 0px auto;
+    
+    color: var(--background-color);
+    background-color: var(--main-color);
+}
+
+/*results content*/
+
+.results-content{
+    flex: 1;
+    padding: 20px;
+
+    background-color: var(--background-color);
+}
+
+.result{
+    --height: 150px;
+    --border-size: 5px;
+
+    display: flex;
+    margin-bottom: 15px;
+
+    width: calc(100% - 2 * var(--border-size));
+    height: var(--height);
+
+    text-decoration: none;
+
+    background-color: var(--secondary-color);
+    border: solid var(--border-size) var(--secondary-color);
+    border-radius: 5px;
+
+    box-shadow: 5px 5px 5px rgba(.5, .5, .5, .5);
+}
+
+.result:last-child{
+    margin-bottom: 0px;
+}
+
+.result:hover .article-name{
+    text-decoration: underline;
+}
+
+.preview{
+    position: relative;
+    flex: 0 var(--height);
+
+    height: var(--height);
+}
+
+.preview > img{
+    margin: auto;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    max-height: 90%;
+    max-width: 90%;
+    width: auto;
+    height: auto;
+}
+
+.infos{
+    flex: 1;
+    padding: 10px;
+
+    height: 150px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0fr 0fr 0.8fr;
+    grid-template-areas: "name" "sub-infos" "overview";
+}
+
+.article-name{
+    grid-area: name;
+    color: var(--main-color);
+    font-size: 26px;
+}
+
+.article-sub-infos{
+    grid-area: sub-infos;
+}
+
+.article-sub-infos > span{
+    padding-right: 10px;
+}
+
+.article-overview{
+    grid-area: overview;
+    overflow: hidden;
+    height: max-content;
+}
+
+/*Responsive design*/
+
+@media (max-width: 600px), (max-aspect-ratio: 1/1){
+    main{
+        flex-direction: column;
+    }
+
+    .filter-bar{
+        border-right: none;
+        border-bottom: solid 2px var(--main-color);
+    }
+}
