@@ -4,9 +4,6 @@
     --secondary-color: #30475e;
     --main-color: #f2a365;
     --text-color: #ececec;
-
-    --max-width: 600px;
-    --max-ratio: 1/1;
 }
 
 *{
@@ -16,6 +13,10 @@
     color: var(--text-color);
     font-family: Arial, Helvetica, sans-serif;
     outline: none;
+}
+
+input, button, select, option, textarea{
+    color: var(--background-color);
 }
 
 body{
