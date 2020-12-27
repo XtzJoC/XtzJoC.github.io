@@ -1,0 +1,72 @@
+main{
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    grid-template-rows: 0fr;
+    grid-template-areas: "cart-resume adress-form";
+
+    margin: 20px;
+}
+
+main h1{
+    margin-bottom: 10px;
+
+    color: var(--main-color);
+    font-size: 32px;
+}
+
+.cart-resume-content{
+    grid-area: cart-resume;
+    margin-right: 20px;
+}
+
+.cart-article{
+    display: flex;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 5px;
+
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+}
+
+.cart-article:last-child{
+    margin-bottom: 0px;
+}
+
+.preview{
+    position: relative;
+
+    flex: 0 160px;
+    height: 100%;
+}
+
+.preview > img{
+    margin: auto;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    max-height: 90%;
+    max-width: 90%;
+    width: auto;
+    height: auto;
+    
+    border-radius: 5px;
+}
+
+.article-name{
+    font-size: 22px;
+    white-space: nowrap;
+}
+
+.cart-article:hover .article-name{
+    text-decoration: underline;
+}
+
+.contact-content{
+    grid-area: adress-form;
+}
