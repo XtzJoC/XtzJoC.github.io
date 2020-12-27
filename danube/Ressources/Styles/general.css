@@ -20,18 +20,24 @@ input, button, select, option, textarea{
 }
 
 body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
     background-color: var(--background-color);
 }
 
 /*Global header style*/
 
 header{
-    background-color: var(--main-color);
+    flex: 0;
 
     display: grid;
     grid-template-columns: 0fr 1fr 0fr;
     grid-template-rows: 1fr;
     grid-template-areas: "title search-bar cart";
+
+    background-color: var(--main-color);
 }
 
 header > *{
@@ -86,9 +92,17 @@ header > h1{
     grid-area: cart;
 }
 
+/*Global main style*/
+
+main{
+    flex: 1;
+}
+
 /*Global footer style*/
 
 footer{
+    flex: 0;
+
     display: block;
     padding: 0px;
     padding-bottom: 20px;
