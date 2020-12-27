@@ -6,7 +6,7 @@ main{
 /*filter bar*/
 
 .filter-bar{
-    flex: 1 max-content;
+    flex: 0 content;
     padding: 10px;
 
     background-color: var(--background-color);
@@ -67,19 +67,16 @@ main{
 }
 
 .result{
-    --height: 150px;
-    --border-size: 5px;
-
     display: flex;
     margin-bottom: 15px;
 
-    width: calc(100% - 2 * var(--border-size));
-    height: var(--height);
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
 
     text-decoration: none;
 
     background-color: var(--secondary-color);
-    border: solid var(--border-size) var(--secondary-color);
     border-radius: 5px;
 
     box-shadow: 5px 5px 5px rgba(.5, .5, .5, .5);
@@ -95,9 +92,8 @@ main{
 
 .preview{
     position: relative;
-    flex: 0 var(--height);
-
-    height: var(--height);
+    flex:0 150px;
+    height: 150px;
 }
 
 .preview > img{
