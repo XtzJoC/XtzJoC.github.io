@@ -63,38 +63,43 @@
         <form class="contact-container" action="cart.html">
             <h1 class="contact-title">Passer votre commande :</h1>
 
-            <label for="family-name">Nom</label>
-            <div class="name">
-                <div class="first-name-container">
-                    <input type="text" name="first-name" id = "first-name"
-                    class="first-name" minlength="3" maxlength="50" required>
-                    <p class="subtitle">Prénom</p>
-                </div>
-
+            <label for="family-name" class="name">Nom</label>
+            <div class="main-field name">
                 <div class="family-name-container">
-                    <input type="text" name="family-name" id = "family-name"
+                    <input type="text" name="family-name" id="family-name"
                     class="family-name" minlength="3" maxlength="50" required>
                     <p class="subtitle">Nom de famille</p>
                 </div>
+
+                <div class="first-name-container">
+                    <input type="text" name="first-name" id="first-name"
+                    class="first-name" minlength="3" maxlength="50" required>
+                    <p class="subtitle">Prénom</p>
+                </div>
             </div>
 
-            <label for="phone">Téléphone</label>
-            <input type="tel" name="phone" id = "phone" class="phone" required>
+            <label for="phone" class="phone">Téléphone</label>
+            <div class="main-field phone">
+                <input type="number" name="phone" id="phone" class="phone"
+                minlength="10" maxlength="10" required>
+            </div>
 
-            <label for="mail">Email</label>
-            <input type="email" name="mail" id="mail" class="email">
+            <label for="mail" class="mail">Email</label>
+            <div class="main-field mail">
+                <input type="email" name="mail" id="mail" class="email">
+            </div>
 
-            <label for="adress">Adresse</label>
-            <div class="full-address">
-                <div class="adress-container">
-                    <input type="text" name="adress" id = "adress" class="adress"
+            <label for="address">Adresse</label>
+            <div class="main-field address">
+                <div class="address-container">
+                    <input type="text" name="address" id = "address" class="address"
                     minlength="3" maxlength="150" required>
                     <p class="subtitle">Adresse</p>
                 </div>
 
-                <div class="additional-adress-container">
-                    <input type="text" name="additional-adress" id = "additional-adress"
-                    class="additional-adress" maxlength="150">
+                <div class="additional-address-container">
+                    <input type="text" name="additional-address" id = "additional-address"
+                    class="additional-address" maxlength="150">
                     <p class="subtitle">Adresse complémentaire</p>
                 </div>
 
@@ -123,7 +128,7 @@
                 </div>
             </div>
 
-            <button type="submit">Finaliser la commande</button>
+            <button type="submit" class="finalize-order">Finaliser la commande</button>
         </form>
     </main>
     <footer>
