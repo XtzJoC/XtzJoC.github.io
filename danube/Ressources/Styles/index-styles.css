@@ -1,94 +1,89 @@
-*{
-    margin: 0px;
-    padding: 0px;
-
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-body{
-    background-color: grey;
-}
+/*Header adjustements*/
 
 header{
-    background-color: #ffbd69;
-    padding: 20px 0px;
+    grid-template-columns: 1fr 0fr;
+    grid-template-rows: 0fr 1fr;
+    grid-template-areas: "title title" "search-bar cart";
 }
 
-header > h1{
-    color: #202040;
-
+header h1{
     text-align: center;
-    text-transform: uppercase;
-
-    font-size: 42px;
+    font-size: 36px;
+    margin-bottom: 0px;
 }
 
 .search-bar{
-    margin: 0px auto;
-    margin-top: 10px;
-
-    width: 70%;
-    display: flex;
+    margin: 10px auto;
+    max-width: 800px;
+    width: 95%;
 }
 
-.search-bar > input, .search-bar > button{
-    background-color: white;
-    border: 1px solid black;
-
-    outline: none;
+.search-bar > input, .search-bar > button, .cart{
+    width: 36px;
+    height: 36px;
 }
 
 .search-bar > input{
-    flex: 1;
-    width: 100%;
-    border-right: 0px;
-
-    font-size: 20px;
-    padding-left: 2px;
+    font-size: 26px;
 }
 
-.search-bar > button{
-    width: 30px;
-    height: 30px;
-
-    background-image: url("Ressources/Icons/search.png");
-    background-size: 22px;
-    background-position: 2px;
-    background-repeat: no-repeat;
-}
-
-/**/
+/*Main styles*/
 
 main{
-    height: 100%;
+    display: block;
+    margin: 0px 5%;
+    padding: 20px;
+    
+    box-sizing: border-box;
+
+    background-image: linear-gradient(var(--secondary-color), var(--background-color));
 }
 
-.top-selling{
-    margin: 0px 5%;
+main > h1{
+    margin-bottom: 20px;
 
-    background-image: linear-gradient(blue, white);
+    color: var(--main-color);
+    font-size: 32px;
+    text-decoration: underline;
 }
 
 .top-products{
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
-.product{
-    padding: 20px;
+a.product{
+    flex: 1 32%;
+    display: block;
+    height: max-content;
 
-    flex: 1 300px;
+    text-decoration: none;
+}
+
+a.product:hover h2{
+    text-decoration: underline;
+}
+
+a.product h2{
+    margin-bottom: 10px;
 }
 
 .product > img{
     width: 100%;
 }
 
-/**/
+/*Responsive design*/
 
-footer{
-    padding: 20px 50px;
+@media (max-width: 1000px){
+    main{
+        margin: 0px;
+        width: 100%;
+    }
+}
 
-    background-color: #ffbd69;
+@media (max-aspect-ratio:  10/15){
+    a.product{
+        flex: 1 100%;
+    }
 }
