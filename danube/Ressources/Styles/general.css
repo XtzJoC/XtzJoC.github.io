@@ -79,18 +79,29 @@ header > h1{
     border-right: 0px;
 }
 
-.search-bar > button{
+.search-bar > button, .cart{
+    position: relative;
     width: 30px;
     height: 30px;
-
-    background-image: url("../../Ressources/Icons/search.png");
-    background-size: 24px;
-    background-position: 2px;
-    background-repeat: no-repeat;
 }
 
 .cart{
     grid-area: cart;
+}
+
+.search-bar > button img, .cart img{
+    margin: auto;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    max-height: 90%;
+    max-width: 90%;
+    width: auto;
+    height: auto;
 }
 
 /*Global main style*/
@@ -162,7 +173,7 @@ footer a:hover{
 
 /*Responsive design*/
 
-@media (max-width: 600px), (max-aspect-ratio: 1/1){
+@media (max-width: 700px){
     header{
         grid-template-columns: 1fr 0fr;
         grid-template-rows: 0fr 1fr;
