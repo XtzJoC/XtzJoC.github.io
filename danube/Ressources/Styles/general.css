@@ -59,6 +59,10 @@ header h1{
     font-weight: bolder;
 }
 
+header a:hover h1{
+    text-decoration: underline;
+}
+
 .search-bar{
     grid-area: search-bar;
     display: flex;
