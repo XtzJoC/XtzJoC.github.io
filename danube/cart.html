@@ -18,7 +18,7 @@
         </div>
     </header>
     <main>
-        <div class="cart-resume-content">
+        <div class="cart-resume-container">
             <h1 class="cart-resume-title">Résumer de votre commande :</h1>
 
             <div class="cart-resume-list">
@@ -60,18 +60,18 @@
             </div>
         </div>
 
-        <form class="contact-content" action="cart.html">
+        <form class="contact-container" action="cart.html">
             <h1 class="contact-title">Passer votre commande :</h1>
 
             <label for="family-name">Nom</label>
             <div class="name">
-                <div class="first-name-content">
+                <div class="first-name-container">
                     <input type="text" name="first-name" id = "first-name"
                     class="first-name" minlength="3" maxlength="50" required>
                     <p class="subtitle">Prénom</p>
                 </div>
 
-                <div class="family-name-content">
+                <div class="family-name-container">
                     <input type="text" name="family-name" id = "family-name"
                     class="family-name" minlength="3" maxlength="50" required>
                     <p class="subtitle">Nom de famille</p>
@@ -86,32 +86,32 @@
 
             <label for="adress">Adresse</label>
             <div class="full-address">
-                <div class="adress-content">
+                <div class="adress-container">
                     <input type="text" name="adress" id = "adress" class="adress"
                     minlength="3" maxlength="150" required>
                     <p class="subtitle">Adresse</p>
                 </div>
 
-                <div class="additional-adress-content">
+                <div class="additional-adress-container">
                     <input type="text" name="additional-adress" id = "additional-adress"
                     class="additional-adress" maxlength="150">
                     <p class="subtitle">Adresse complémentaire</p>
                 </div>
 
                 <div class="location-field">
-                    <div class="city-content">
+                    <div class="city-container">
                         <input type="text" name="city" id = "city"
                         class="city" maxlength="50" required>
                         <p class="subtitle">Ville</p>
                     </div>
 
-                    <div class="postcode-content">
+                    <div class="postcode-container">
                         <input type="number" name="postcode" id = "postcode"
                         class="postcode" minlength="5" maxlength="5" required>
                         <p class="subtitle">Code postal</p>
                     </div>
 
-                    <div class="country-content">
+                    <div class="country-container">
                         <select name="country" class="country" required>
                             <option value="France" selected>France</option>
                             <option value="Belgique">Belgique</option>

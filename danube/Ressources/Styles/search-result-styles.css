@@ -48,7 +48,7 @@ main{
     text-decoration: underline;
 }
 
-.filters-content > button{
+.filters-container > button{
     display: block;
     padding: 5px;
     margin: 0px auto;
@@ -57,9 +57,9 @@ main{
     background-color: var(--main-color);
 }
 
-/*results content*/
+/*results container*/
 
-.results-content{
+.results-container{
     flex: 1;
     padding: 20px;
 

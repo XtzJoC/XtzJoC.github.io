@@ -129,7 +129,7 @@ h1, h2{
 
 /*Commentary section*/
 
-.commentaries-content{
+.commentaries-container{
     padding: 10px 0px;
     border-top: solid 2px var(--text-color);
 }
