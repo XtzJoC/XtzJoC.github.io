@@ -51,11 +51,11 @@ h1, h2{
 
 .preview-image{
     grid-area: preview-image;
-    position: relative;
 }
 
 .preview-image img{
-    width: 100%;
+    max-width: 100%;
+    max-height: 600px;
 }
 
 .infos-container{

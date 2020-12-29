@@ -66,6 +66,12 @@ main{
     background-color: var(--background-color);
 }
 
+.results-container > h1{
+    color: var(--text-color);
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
 .result{
     display: flex;
     margin-bottom: 15px;
@@ -130,7 +136,12 @@ main{
 }
 
 .article-sub-infos > span{
+    font-size: 18px;
     padding-right: 10px;
+}
+
+.price{
+    font-weight: bolder;
 }
 
 .article-overview{
@@ -138,6 +149,8 @@ main{
     text-overflow: ellipsis;
     overflow: hidden;
     flex-wrap: nowrap;
+
+    font-size: 14px;
 }
 
 /*Responsive design*/
