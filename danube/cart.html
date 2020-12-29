@@ -29,36 +29,36 @@
             <div class="cart-resume-list">
                 <a class="cart-article" href="article.html">
                     <div class="preview">
-                        <img src="Ressources/Images/desk-preview.jpg">
+                        <img src="Ressources/Articles/Samsung-SSD-MU-PA500B/Main-preview.jpg" alt="SSD">
                     </div>
                     <div class="infos">
-                        <h2 class="article-name">Article 1</h2>
+                        <h2 class="article-name">Samsung SSD MU-PA500B</h2>
                         <div class="article-sub-infos">
-                            <span>10.99€</span>
+                            <span>87.56€</span>
                         </div>
                     </div>
                 </a>
 
                 <a class="cart-article" href="article.html">
                     <div class="preview">
-                        <img src="Ressources/Images/desk-preview.jpg">
+                        <img src="Ressources/Articles/Licht/Main-preview.jpg" alt="Lampe">
                     </div>
                     <div class="infos">
-                        <h2 class="article-name">Article 1</h2>
+                        <h2 class="article-name">Licht - Lampe de table design</h2>
                         <div class="article-sub-infos">
-                            <span>10.99€</span>
+                            <span>28,99€</span>
                         </div>
                     </div>
                 </a>
 
                 <a class="cart-article" href="article.html">
                     <div class="preview">
-                        <img src="Ressources/Images/desk-preview.jpg">
+                        <img src="Ressources/Articles/HappyGarden/Main-preview.jpg" alt="Bureau">
                     </div>
                     <div class="infos">
                         <h2 class="article-name">Article 1</h2>
                         <div class="article-sub-infos">
-                            <span>10.99€</span>
+                            <span>89.90€</span>
                         </div>
                     </div>
                 </a>
@@ -85,13 +85,13 @@
 
             <label for="phone" class="phone">Téléphone</label>
             <div class="main-field phone">
-                <input type="number" name="phone" id="phone" class="phone"
-                minlength="10" maxlength="10" required>
+                <input type="text" name="phone" id="phone" class="phone"
+                pattern="0[4-7][0-9]{8}" required>
             </div>
 
             <label for="mail" class="mail">Email</label>
             <div class="main-field mail">
-                <input type="email" name="mail" id="mail" class="email">
+                <input type="email" name="mail" id="mail" class="email" required>
             </div>
 
             <label for="address">Adresse</label>
@@ -116,13 +116,13 @@
                     </div>
 
                     <div class="postcode-container">
-                        <input type="number" name="postcode" id = "postcode"
-                        class="postcode" minlength="5" maxlength="5" required>
+                        <input type="text" name="postcode" id = "postcode"
+                        class="postcode" pattern="[0-9]{5}" required>
                         <p class="subtitle">Code postal</p>
                     </div>
 
                     <div class="country-container">
-                        <select name="country" class="country" required>
+                        <select name="country" class="country">
                             <option value="France" selected>France</option>
                             <option value="Belgique">Belgique</option>
                             <option value="Suisse">Suisse</option>

@@ -227,14 +227,13 @@ h1, h2{
         "product-info" "description";
     }
 
+    .preview-image > img{
+        max-height: 100%;
+    }
+
     .preview-selection-container{
         height: 120px;
         padding-bottom: 5px;
-    }
-
-    .preview-selection{
-        flex-direction: row;
-        height: 100px;
     }
     
     .preview-selection-container a{
@@ -245,6 +244,11 @@ h1, h2{
     .preview-selection-container img{
         width: auto;
         height: 100%;
+    }
+
+    .preview-selection{
+        flex-direction: row;
+        height: 100px;
     }
 
     .infos{
