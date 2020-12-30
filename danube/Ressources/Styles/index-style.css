@@ -36,7 +36,7 @@ main{
     
     box-sizing: border-box;
 
-    background-image: linear-gradient(var(--secondary-color), var(--background-color));
+    background-color: var(--secondary-color);
 }
 
 main > h1{

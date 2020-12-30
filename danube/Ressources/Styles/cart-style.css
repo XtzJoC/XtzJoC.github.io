@@ -58,9 +58,12 @@ main h1{
     border-radius: 5px;
 }
 
+.infos{
+    flex: 1;
+}
+
 .article-name{
     font-size: 22px;
-    white-space: nowrap;
 }
 
 .cart-article:hover .article-name{
@@ -184,6 +187,7 @@ div.address{
 
     .contact-container{
         margin: 0px auto;
+        text-align: center;
     }
 }
 

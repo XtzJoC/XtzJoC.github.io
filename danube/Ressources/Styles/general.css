@@ -111,10 +111,6 @@ header a:hover h1{
     height: auto;
 }
 
-.cart img{
-    filter: invert();
-}
-
 /*Global main style*/
 
 main{
