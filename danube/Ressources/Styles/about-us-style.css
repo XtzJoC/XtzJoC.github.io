@@ -1,0 +1,29 @@
+main{
+    padding: 30px;
+}
+
+main > div{
+    margin-bottom: 30px;
+}
+
+main > div:last-child{
+    margin-bottom: 0px;
+}
+
+main h1{
+    color: var(--main-color);
+    font-size: 42px;
+
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+main p{
+    font-size: 22px;
+    text-align: justify;
+}
+
+.delimiter{
+    padding-top: 30px;
+    border-top: solid 2px var(--text-color);
+}
