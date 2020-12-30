@@ -11,7 +11,7 @@ main > div:last-child{
 }
 
 main h1{
-    color: var(--main-color);
+    color: #f2a365;
     font-size: 42px;
 
     text-decoration: underline;
@@ -25,5 +25,5 @@ main p{
 
 .delimiter{
     padding-top: 30px;
-    border-top: solid 2px var(--text-color);
+    border-top: solid 2px #ececec;
 }

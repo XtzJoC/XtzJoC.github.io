@@ -36,13 +36,13 @@ main{
     
     box-sizing: border-box;
 
-    background-color: var(--secondary-color);
+    background-color: #30475e;
 }
 
 main > h1{
     margin-bottom: 20px;
 
-    color: var(--main-color);
+    color: #f2a365;
     font-size: 32px;
     text-decoration: underline;
 }

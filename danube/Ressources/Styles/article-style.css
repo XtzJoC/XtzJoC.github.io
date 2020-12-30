@@ -3,7 +3,7 @@ main{
 }
 
 h1, h2{
-    color: var(--main-color);
+    color: #f2a365;
 }
 
 /*Article presentation section*/
@@ -21,7 +21,7 @@ h1, h2{
 .title{
     grid-area: title;
     font-size: 32px;
-    border-bottom: solid 2px var(--text-color);
+    border-bottom: solid 2px #ececec;
 }
 
 .preview-selection-container{
@@ -45,7 +45,7 @@ h1, h2{
 .preview-selection img{
     width: 100%;
 
-    background-color: var(--secondary-color);
+    background-color: #30475e;
     border-radius: 10px;
 }
 
@@ -65,8 +65,7 @@ h1, h2{
 .infos{
     padding: 8px;
 
-    background-color: var(--secondary-color);
-    border: solid 3px var(--secondary-color);
+    background-color: #30475e;
     border-radius: 5px;
 
     box-shadow: 5px 5px 5px rgba(.5, .5, .5, .5);
@@ -93,13 +92,13 @@ h1, h2{
     margin-top: 20px;
 
     width: 90%;
-    background-color: var(--main-color);
+    background-color: #f2a365;
 }
 
 .description{
     grid-area: description;
     padding: 10px 0px;
-    border-top: solid 2px var(--text-color);
+    border-top: solid 2px #ececec;
 }
 
 .description > h2{
@@ -124,14 +123,14 @@ h1, h2{
 
 .commentaries-container{
     padding: 10px 0px;
-    border-top: solid 2px var(--text-color);
+    border-top: solid 2px #ececec;
 }
 
 .commentary{
     margin: 15px 0px;
     padding: 10px;
 
-    background-color: var(--secondary-color);
+    background-color: #30475e;
     border-radius: 5px;
 
     box-shadow: 5px 5px 5px rgba(.5, .5, .5, .5);
@@ -148,7 +147,7 @@ h1, h2{
 }
 
 .commentary .rating{
-    color: var(--main-color);
+    color: #f2a365;
 }
 
 .commentary-text{
@@ -162,7 +161,7 @@ h1, h2{
     max-width: 800px;
     box-sizing: border-box;
 
-    background-color: var(--main-color);
+    background-color: #f2a365;
     border-radius: 5px;
     box-shadow: 5px 5px 5px rgba(.5, .5, .5, .5);
 }
@@ -177,7 +176,7 @@ h1, h2{
 }
 
 .add-title{
-    color: var(--text-color);
+    color: #ececec;
 }
 
 .add-username, .add-commentary-title{

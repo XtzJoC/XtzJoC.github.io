@@ -11,7 +11,7 @@ main{
 main h1{
     margin-bottom: 10px;
 
-    color: var(--main-color);
+    color: #f2a365;
     font-size: 32px;
 }
 
@@ -26,7 +26,7 @@ main h1{
     padding: 5px;
 
     text-decoration: none;
-    background-color: var(--secondary-color);
+    background-color: #30475e;
     border-radius: 5px;
 }
 
@@ -104,7 +104,7 @@ main h1{
 }
 
 .subtitle{
-    color: var(--text-secondary-color);
+    color: #aaa;
     font-size: 14px;
 }
 
@@ -168,8 +168,8 @@ div.address{
     width: max-content;
     margin-left: auto;
 
-    color: var(--text-color);
-    background-color: var(--main-color);
+    color: #ececec;
+    background-color: #f2a365;
 
     font-size: 18px;
     font-weight: bolder;

@@ -9,14 +9,14 @@ main{
     flex: 0 content;
     padding: 10px;
 
-    background-color: var(--background-color);
-    border-right: solid 2px var(--main-color);
+    background-color: #222831;
+    border-right: solid 2px #f2a365;
 }
 
 .filter-bar > h1{
     padding-bottom: 10px;
 
-    color: var(--main-color);
+    color: #f2a365;
     font-size: 18px;
 }
 
@@ -30,7 +30,7 @@ main{
 
 .price-field > input{
     width: 50px;
-    color: var(--background-color);
+    color: #222831;
 }
 
 .star-field > label{
@@ -43,7 +43,7 @@ main{
 }
 
 .star-field > input[type="radio"]:checked + label{
-    color: var(--main-color);
+    color: #f2a365;
     font-weight: bolder;
     text-decoration: underline;
 }
@@ -53,8 +53,8 @@ main{
     padding: 5px;
     margin: 0px auto;
     
-    color: var(--background-color);
-    background-color: var(--main-color);
+    color: #222831;
+    background-color: #f2a365;
 }
 
 /*results container*/
@@ -63,11 +63,11 @@ main{
     flex: 1;
     padding: 20px;
 
-    background-color: var(--background-color);
+    background-color: #222831;
 }
 
 .results-container > h1{
-    color: var(--text-color);
+    color: #ececec;
     font-size: 22px;
     margin-bottom: 5px;
 }
@@ -82,7 +82,7 @@ main{
 
     text-decoration: none;
 
-    background-color: var(--secondary-color);
+    background-color: #30475e;
     border-radius: 5px;
 
     box-shadow: 5px 5px 5px rgba(.5, .5, .5, .5);
@@ -127,7 +127,7 @@ main{
 
 .article-name{
     flex: 0;
-    color: var(--main-color);
+    color: #f2a365;
     font-size: 26px;
 }
 
@@ -162,6 +162,6 @@ main{
 
     .filter-bar{
         border-right: none;
-        border-bottom: solid 2px var(--main-color);
+        border-bottom: solid 2px #f2a365;
     }
 }

@@ -1,23 +1,24 @@
-/* variables */
-:root{
-    --background-color: #222831;
-    --secondary-color: #30475e;
-    --main-color: #f2a365;
-    --text-color: #ececec;
-    --text-secondary-color: #aaa;
-}
+/* Colors :
+    main-color: #f2a365
+    secondary-color: #30475e;
+    text-color: #ececec;
+    text-secondary-color: #aaa;
+    background-color: #222831;
+*/
+
+/*Global styles*/
 
 *{
     margin: 0px;
     padding: 0px;
 
-    color: var(--text-color);
+    color: #ececec;
     font-family: Arial, Helvetica, sans-serif;
     outline: none;
 }
 
 input, button, select, option, textarea{
-    color: var(--background-color);
+    color: #222831;
 }
 
 body{
@@ -25,7 +26,7 @@ body{
     flex-direction: column;
     min-height: 100vh;
 
-    background-color: var(--background-color);
+    background-color: #222831;
 }
 
 /*Global header style*/
@@ -38,7 +39,7 @@ header{
     grid-template-rows: 1fr;
     grid-template-areas: "title search-bar cart";
 
-    background-color: var(--main-color);
+    background-color: #f2a365;
 }
 
 header > *{
@@ -53,7 +54,7 @@ header a{
 header h1{
     grid-area: title;
 
-    color: var(--secondary-color);
+    color: #30475e;
     text-transform: uppercase;
     font-size: 22px;
     font-weight: bolder;
@@ -126,12 +127,12 @@ footer{
     padding: 0px;
     padding-bottom: 20px;
 
-    color: var(--text-color);
-    background-color: var(--secondary-color);
+    color: #ececec;
+    background-color: #30475e;
 }
 
 footer a{
-    color: var(--text-color);
+    color: #ececec;
     text-decoration: none;
 }
 
@@ -155,7 +156,7 @@ footer a:hover{
 }
 
 .footer-panel > h1{
-    color: var(--main-color);
+    color: #f2a365;
     font-size: 22px;
     font-weight: bolder;
 }
@@ -168,7 +169,7 @@ footer a:hover{
     margin-top: 50px;
     width: 100%;
 
-    border-top: solid 2px var(--text-color);
+    border-top: solid 2px #ececec;
 }
 
 .footer-end a{
